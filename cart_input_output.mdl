@@ -1,17 +1,17 @@
 Model {
   Name			  "cart_input_output"
-  Version		  8.0
+  Version		  8.2
   MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.246"
+    ComputedModelVersion    "1.247"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   Description		  "This model demonstrates three different representations\nof a 2nd-Order system."
-  SavedCharacterEncoding  "ISO-8859-1"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [62.0, 22.0, 1289.0, 880.0]
+      Location		      [2057.0, 55.0, 1640.0, 989.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,7 +42,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -57,7 +57,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1255.0, 709.0]
+	Extents			[1590.0, 815.0]
 	ZoomFactor		[1.0]
 	Offset			[-47.5, -50.12890625]
       }
@@ -67,12 +67,12 @@ Model {
   Creator		  "Douglas G. Jones"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Benjamin"
+  LastModifiedBy	  "bzr3"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Dec 20 20:44:35 2013"
-  RTWModifiedTimeStamp	  309466666
+  LastModifiedDate	  "Tue Jan 21 10:14:27 2014"
+  RTWModifiedTimeStamp	  312200060
   ModifiedHistory	  "05 Feb 2002  Created."
-  ModelVersionFormat	  "1.%<AutoIncrement:246>"
+  ModelVersionFormat	  "1.%<AutoIncrement:247>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -98,6 +98,11 @@ Model {
   BrowserShowLibraryLinks off
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -130,6 +135,7 @@ Model {
   CovNameIncrementing	  off
   CovHtmlReporting	  on
   CovForceBlockReductionOff on
+  CovEnableCumulative	  on
   covSaveCumulativeToWorkspaceVar on
   CovSaveSingleToWorkspaceVar on
   CovCumulativeVarName	  "covCumulativeData"
@@ -166,13 +172,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.12.1"
+      Version		      "1.13.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  StartTime		  "0.0"
 	  StopTime		  "4"
 	  AbsTol		  "auto"
@@ -207,7 +213,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -239,7 +245,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -259,6 +265,7 @@ Model {
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  off
@@ -278,6 +285,7 @@ Model {
 	  SystemCodeInlineAuto	  off
 	  StateBitsets		  off
 	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
 	  UseTempVars		  off
 	  ZeroExternalMemoryAtStartup on
 	  ZeroInternalMemoryAtStartup on
@@ -295,7 +303,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -385,11 +393,12 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -399,20 +408,23 @@ Model {
 	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "Generic->32-bit x86 compatible"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
-	  TargetBitPerLong	  64
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
-	  TargetBitPerPointer	  64
+	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  on
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "LittleEndian"
-	  TargetWordSize	  64
+	  TargetWordSize	  32
 	  TargetTypeEmulationWarnSuppressLevel 0
 	  TargetPreprocMaxBitsSint 32
 	  TargetPreprocMaxBitsUint 32
@@ -422,7 +434,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -437,7 +449,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -448,11 +460,12 @@ Model {
 	  SimUseLocalCustomCode	  off
 	  SimParseCustomCode	  on
 	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.12.1"
+	  Version		  "1.13.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    9
@@ -468,11 +481,15 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "xpctarget.tlc"
+	  TLCOptions		  ""
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
 	  TemplateMakefile	  "xpc_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
 	  GenerateReport	  off
 	  SaveLog		  off
 	  RTWVerbose		  off
@@ -484,9 +501,19 @@ Model {
 	  ProcessScriptMode	  "Default"
 	  ConfigurationMode	  "Optimized"
 	  ProcessScript		  "xpctarget_make_rtw_hook"
+	  ConfigurationScript	  ""
 	  ConfigAtBuild		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
 	  PortableWordSizes	  off
@@ -496,6 +523,7 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  on
@@ -509,14 +537,17 @@ Model {
 	  GenerateCodeMetricsReport off
 	  GenerateCodeReplacementReport	off
 	  RTWCompilerOptimization "On"
+	  RTWCustomCompilerOptimizations ""
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
 	  Array {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.12.1"
+	      Version		      "1.13.1"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -560,13 +591,14 @@ Model {
 	      IncDataTypeInIds	      off
 	      MangleLength	      1
 	      CustomSymbolStrGlobalVar "$R$N$M"
-	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrType     "$N$R$M_T"
 	      CustomSymbolStrField    "$N$M"
 	      CustomSymbolStrFcn      "$R$N$M$F"
 	      CustomSymbolStrFcnArg   "rt$I$N$M"
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
 	      DefineNamingRule	      "None"
 	      ParamNamingRule	      "None"
 	      SignalNamingRule	      "None"
@@ -575,7 +607,7 @@ Model {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
-	      InternalIdentifier      "Classic"
+	      InternalIdentifier      "Shortened"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
@@ -583,7 +615,7 @@ Model {
 	    Simulink.TargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.12.1"
+	      Version		      "1.13.1"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -593,7 +625,7 @@ Model {
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
 		Cell			"GenerateTestInterfaces"
-		Cell			"MultiInstanceERTCode"
+		Cell			"CPPClassGenCompliant"
 		Cell			"PurelyIntegerCode"
 		Cell			"PortableWordSizes"
 		Cell			"SupportComplex"
@@ -602,7 +634,7 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
 		Cell			"GeneratePreprocessorConditionals"
-		Cell			"CPPClassGenCompliant"
+		Cell			"GenerateAllocFcn"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_tmw.mat"
@@ -641,10 +673,12 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.TargetSpecificTriggerConfigurationBase"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      on
+	      GenerateAllocFcn	      off
 	      CustomProperty {
 		DataType		"string"
 		Name			"RL32ModeModifier"
@@ -783,7 +817,7 @@ Model {
 	    Dimension		    2
 	    MECH.SimMechanicsCC {
 	      $ObjectID		      19
-	      Version		      "1.12.1"
+	      Version		      "1.13.1"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
 	      WarnOnSingularInitialAssembly off
@@ -816,14 +850,14 @@ Model {
 	    }
 	    simmechanics.ConfigurationSet {
 	      $ObjectID		      20
-	      Version		      "1.12.1"
+	      Version		      "1.13.1"
 	      Description	      "SimMechanics 2G"
 	      Array {
 		Type			"Handle"
 		Dimension		2
 		simmechanics.DiagnosticsConfigSet {
 		  $ObjectID		  21
-		  Version		  "1.12.1"
+		  Version		  "1.13.1"
 		  Description		  "Diagnostics"
 		  Name			  "DiagnosticsConfigSet"
 		  SimMechanicsInvalidVisualProperty "warning"
@@ -837,7 +871,7 @@ Model {
 		}
 		simmechanics.ExplorerConfigSet {
 		  $ObjectID		  22
-		  Version		  "1.12.1"
+		  Version		  "1.13.1"
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
 		  SimMechanicsOpenEditorOnUpdate on
@@ -1069,6 +1103,7 @@ Model {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -1081,6 +1116,7 @@ Model {
       SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Sum
@@ -1110,7 +1146,7 @@ Model {
   }
   System {
     Name		    "cart_input_output"
-    Location		    [62, 22, 1351, 902]
+    Location		    [2057, 55, 3697, 1044]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1124,7 +1160,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "88"
+    SIDHighWatermark	    "89"
     Block {
       BlockType		      Sum
       Name		      "Add"
@@ -1209,9 +1245,10 @@ Model {
       Ports		      [1, 1]
       Position		      [500, 334, 615, 416]
       ZOrder		      -10
-      LibraryVersion	      "1.793"
+      LibraryVersion	      "1.795"
       SourceBlock	      "dspadpt3/Kalman Filter"
       SourceType	      "Kalman Filter"
+      ContentPreviewEnabled   off
       num_targets	      "1"
       sourceEnable	      "Always"
       isReset		      on
@@ -1271,6 +1308,17 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "89"
+      Ports		      [2, 1]
+      Position		      [1315, 396, 1320, 574]
+      ZOrder		      31
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Gain
       Name		      "P Gain"
       SID		      "47"
@@ -1288,7 +1336,7 @@ Model {
       Ports		      [0, 5]
       Position		      [15, 129, 115, 241]
       ZOrder		      -5
-      LibraryVersion	      "1.264"
+      LibraryVersion	      "1.279"
       SourceBlock	      "xpcnilib/A//D/M Series/PCI-6259 AD"
       SourceType	      "adnipci6259"
       channel		      "[1 7 14 16 6]"
@@ -1303,9 +1351,9 @@ Model {
       Name		      "PCI-6259 DA"
       SID		      "17"
       Ports		      [2]
-      Position		      [1040, 447, 1145, 503]
+      Position		      [1180, 447, 1285, 503]
       ZOrder		      -5
-      LibraryVersion	      "1.264"
+      LibraryVersion	      "1.279"
       SourceBlock	      "xpcnilib/D//A/M Series/PCI-6259 DA"
       SourceType	      "danipci6259"
       channel		      "[1 2]"
@@ -1320,7 +1368,7 @@ Model {
       Name		      "Product"
       SID		      "49"
       Ports		      [2, 1]
-      Position		      [985, 442, 1015, 473]
+      Position		      [1025, 442, 1055, 473]
       ZOrder		      -13
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1331,7 +1379,7 @@ Model {
       Name		      "Product1"
       SID		      "75"
       Ports		      [2, 1]
-      Position		      [975, 517, 1005, 548]
+      Position		      [1025, 557, 1055, 588]
       ZOrder		      -13
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1342,7 +1390,7 @@ Model {
       Name		      "Sine Wave1"
       SID		      "55"
       Ports		      [0, 1]
-      Position		      [875, 490, 905, 520]
+      Position		      [955, 365, 985, 395]
       ZOrder		      -21
       Frequency		      "2*pi*90"
       SampleTime	      "0"
@@ -1352,7 +1400,7 @@ Model {
       Name		      "Sine Wave2"
       SID		      "74"
       Ports		      [0, 1]
-      Position		      [875, 550, 905, 580]
+      Position		      [900, 565, 930, 595]
       ZOrder		      -21
       Frequency		      "2*pi*90"
       Phase		      "270*pi/180"
@@ -1376,6 +1424,7 @@ Model {
       LibraryVersion	      "1.898"
       SourceBlock	      "dspmtrx3/Transpose"
       SourceType	      "Transpose"
+      ContentPreviewEnabled   off
       Hermitian		      off
       overflowFlag	      off
     }
@@ -1389,6 +1438,7 @@ Model {
       LibraryVersion	      "1.898"
       SourceBlock	      "dspmtrx3/Transpose"
       SourceType	      "Transpose"
+      ContentPreviewEnabled   off
       Hermitian		      off
       overflowFlag	      off
     }
@@ -1424,12 +1474,13 @@ Model {
       Name		      "commanded voltages"
       SID		      "70"
       Ports		      [1]
-      Position		      [1020, 260, 1110, 320]
+      Position		      [1345, 455, 1435, 515]
       ZOrder		      -31
       BackgroundColor	      "green"
-      LibraryVersion	      "1.1706"
+      LibraryVersion	      "1.1758"
       SourceBlock	      "xpclib/Misc./Scope (xPC) "
       SourceType	      "xpcscopeblock"
+      ContentPreviewEnabled   off
       scopeno		      "4"
       scopetype		      "Host"
       autostart		      on
@@ -1442,6 +1493,7 @@ Model {
       interleave	      "1"
       triggermode	      "FreeRun"
       triggersignal	      "1"
+      trigsignalfromport      off
       triggerlevel	      "0.0"
       triggerslope	      "Either"
       triggerscope	      "1"
@@ -1461,9 +1513,10 @@ Model {
       Position		      [235, 425, 325, 485]
       ZOrder		      -32
       BackgroundColor	      "green"
-      LibraryVersion	      "1.1706"
+      LibraryVersion	      "1.1758"
       SourceBlock	      "xpclib/Misc./Scope (xPC) "
       SourceType	      "xpcscopeblock"
+      ContentPreviewEnabled   off
       scopeno		      "3"
       scopetype		      "Host"
       autostart		      on
@@ -1476,6 +1529,7 @@ Model {
       interleave	      "1"
       triggermode	      "FreeRun"
       triggersignal	      "1"
+      trigsignalfromport      off
       triggerlevel	      "0.0"
       triggerslope	      "Either"
       triggerscope	      "1"
@@ -1495,9 +1549,10 @@ Model {
       Position		      [710, 170, 800, 230]
       ZOrder		      -33
       BackgroundColor	      "green"
-      LibraryVersion	      "1.1706"
+      LibraryVersion	      "1.1758"
       SourceBlock	      "xpclib/Misc./Scope (xPC) "
       SourceType	      "xpcscopeblock"
+      ContentPreviewEnabled   off
       scopeno		      "1"
       scopetype		      "Target"
       autostart		      on
@@ -1510,6 +1565,7 @@ Model {
       interleave	      "1"
       triggermode	      "FreeRun"
       triggersignal	      "1"
+      trigsignalfromport      off
       triggerlevel	      "0.0"
       triggerslope	      "Either"
       triggerscope	      "1"
@@ -1529,9 +1585,10 @@ Model {
       Position		      [765, 260, 855, 320]
       ZOrder		      -34
       BackgroundColor	      "green"
-      LibraryVersion	      "1.1706"
+      LibraryVersion	      "1.1758"
       SourceBlock	      "xpclib/Misc./Scope (xPC) "
       SourceType	      "xpcscopeblock"
+      ContentPreviewEnabled   off
       scopeno		      "2"
       scopetype		      "Host"
       autostart		      on
@@ -1544,6 +1601,7 @@ Model {
       interleave	      "1"
       triggermode	      "FreeRun"
       triggersignal	      "1"
+      trigsignalfromport      off
       triggerlevel	      "0.0"
       triggerslope	      "Either"
       triggerscope	      "1"
@@ -1560,12 +1618,13 @@ Model {
       Name		      "raw Data"
       SID		      "77"
       Ports		      [1]
-      Position		      [775, 95, 865, 155]
+      Position		      [710, 45, 800, 105]
       ZOrder		      -35
       BackgroundColor	      "green"
-      LibraryVersion	      "1.1706"
+      LibraryVersion	      "1.1758"
       SourceBlock	      "xpclib/Misc./Scope (xPC) "
       SourceType	      "xpcscopeblock"
+      ContentPreviewEnabled   off
       scopeno		      "5"
       scopetype		      "Host"
       autostart		      on
@@ -1578,6 +1637,7 @@ Model {
       interleave	      "1"
       triggermode	      "FreeRun"
       triggersignal	      "1"
+      trigsignalfromport      off
       triggerlevel	      "0.0"
       triggerslope	      "Either"
       triggerscope	      "1"
@@ -1677,6 +1737,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  ZOrder		  1
 	  SrcBlock		  "v_in"
 	  SrcPort		  1
 	  Points		  [14, 0; 0, -80]
@@ -1684,24 +1745,28 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  2
 	  SrcBlock		  "800 mv/g 9.8 m/s^2/g"
 	  SrcPort		  1
 	  DstBlock		  "a"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  3
 	  SrcBlock		  "Add"
 	  SrcPort		  1
 	  DstBlock		  "800 mv/g 9.8 m/s^2/g"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  4
 	  SrcBlock		  "v_dd"
 	  SrcPort		  1
 	  DstBlock		  "Gain2"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  5
 	  SrcBlock		  "Gain2"
 	  SrcPort		  1
 	  Points		  [15, 0; 0, -100]
@@ -1808,6 +1873,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  ZOrder		  1
 	  SrcBlock		  "volts"
 	  SrcPort		  1
 	  Points		  [0, -45]
@@ -1815,6 +1881,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  2
 	  SrcBlock		  "Constant1"
 	  SrcPort		  1
 	  Points		  [45, 0]
@@ -1822,18 +1889,21 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  3
 	  SrcBlock		  "Gain"
 	  SrcPort		  1
 	  DstBlock		  "Add"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  4
 	  SrcBlock		  "Divide"
 	  SrcPort		  1
 	  DstBlock		  "position\n"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  5
 	  SrcBlock		  "Add"
 	  SrcPort		  1
 	  Points		  [32, 0; 0, -65]
@@ -1841,6 +1911,7 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  6
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
 	  DstBlock		  "Divide"
@@ -1849,99 +1920,120 @@ Model {
 	Annotation {
 	  SID			  "81"
 	  Name			  "Constants are from calibration tests on 11/20"
-	  Position		  [314, 223]
+	  Position		  [314, 223, 314, 223]
+	  AutoSize		  on
+	  WordWrap		  off
+	  ZOrder		  -1
 	}
       }
     }
     Line {
+      ZOrder		      1
       SrcBlock		      "PCI-6259 AD"
       SrcPort		      1
       Points		      [0, -10; 35, 0]
       Branch {
+	ZOrder			2
 	Points			[0, 20; 100, 0]
 	DstBlock		"volt2Acceleration"
 	DstPort			1
       }
       Branch {
+	ZOrder			3
 	DstBlock		"Mux"
 	DstPort			1
       }
     }
     Line {
+      ZOrder		      4
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [15, 0; 0, -50]
+      Points		      [15, 0; 0, -100]
       DstBlock		      "raw Data"
       DstPort		      1
     }
     Line {
+      ZOrder		      5
       SrcBlock		      "Kalman Filter"
       SrcPort		      1
       DstBlock		      "Transpose1"
       DstPort		      1
     }
     Line {
+      ZOrder		      6
       SrcBlock		      "Transpose1"
       SrcPort		      1
       Points		      [10, 0]
       Branch {
+	ZOrder			7
 	Points			[0, -85]
 	DstBlock		"filtered data"
 	DstPort			1
       }
       Branch {
+	ZOrder			8
 	DstBlock		"Demux"
 	DstPort			1
       }
     }
     Line {
+      ZOrder		      9
       SrcBlock		      "Transpose"
       SrcPort		      1
       DstBlock		      "Kalman Filter"
       DstPort		      1
     }
     Line {
+      ZOrder		      10
       SrcBlock		      "Vector\nConcatenate"
       SrcPort		      1
       DstBlock		      "Transpose"
       DstPort		      1
     }
     Line {
+      ZOrder		      11
       SrcBlock		      "volt2Position "
       SrcPort		      1
       Points		      [0, 20; 25, 0]
       Branch {
+	ZOrder			12
 	DstBlock		"Vector\nConcatenate"
 	DstPort			2
       }
       Branch {
+	ZOrder			13
 	Points			[0, -185]
 	DstBlock		"display position on xpc target "
 	DstPort			1
       }
     }
     Line {
+      ZOrder		      14
       SrcBlock		      "volt2Acceleration"
       SrcPort		      1
       DstBlock		      "Vector\nConcatenate"
       DstPort		      1
     }
     Line {
+      ZOrder		      15
       SrcBlock		      "PCI-6259 AD"
       SrcPort		      4
-      Points		      [25, 0; 0, 35]
+      Points		      [25, 0; 0, 35; 65, 0]
       Branch {
-	Points			[110, 0]
+	ZOrder			16
+	Points			[45, 0]
 	DstBlock		"volt2Position "
 	DstPort			1
       }
       Branch {
-	Points			[65, 0; 0, -10; 355, 0]
+	ZOrder			17
+	Points			[0, -10; 355, 0]
 	DstBlock		"Mux"
 	DstPort			2
       }
     }
     Line {
+      ZOrder		      18
       SrcBlock		      "PCI-6259 AD"
       SrcPort		      3
       Points		      [65, 0; 0, 120; -15, 0]
@@ -1949,6 +2041,7 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      19
       SrcBlock		      "PCI-6259 AD"
       SrcPort		      5
       Points		      [0, 45; 50, 0]
@@ -1956,69 +2049,73 @@ Model {
       DstPort		      2
     }
     Line {
+      ZOrder		      20
       SrcBlock		      "Mux1"
       SrcPort		      1
       DstBlock		      "current voltages"
       DstPort		      1
     }
     Line {
+      ZOrder		      51
       SrcBlock		      "Sine Wave1"
       SrcPort		      1
-      Points		      [60, 0]
+      Points		      [19, 0; 0, 70]
       DstBlock		      "Product"
-      DstPort		      2
+      DstPort		      1
     }
     Line {
+      ZOrder		      22
       SrcBlock		      "Demux"
       SrcPort		      2
-      Points		      [10, 0]
+      Points		      [0, 0]
       Branch {
-	Points			[25, 0]
+	ZOrder			46
+	Points			[35, 0]
 	DstBlock		"Add"
 	DstPort			1
       }
       Branch {
-	Points			[-10, 0; 0, 120]
+	ZOrder			24
+	Points			[0, 120]
 	Branch {
+	  ZOrder		  25
 	  Points		  [0, 65]
 	  DstBlock		  "Add2"
 	  DstPort		  2
 	}
 	Branch {
+	  ZOrder		  26
 	  DstBlock		  "Unit Delay"
 	  DstPort		  1
 	}
       }
     }
     Line {
+      ZOrder		      27
       SrcBlock		      "Target Position"
       SrcPort		      1
       DstBlock		      "Add"
       DstPort		      2
     }
     Line {
+      ZOrder		      28
       SrcBlock		      "MinMax"
       SrcPort		      1
-      Points		      [0, 0]
+      Points		      [5, 0; 0, 15]
       Branch {
-	Points			[0, -160]
-	DstBlock		"commanded voltages"
-	DstPort			1
+	ZOrder			53
+	DstBlock		"Product"
+	DstPort			2
       }
       Branch {
-	Points			[0, 0]
-	Branch {
-	  DstBlock		  "Product"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [5, 0; 0, 75]
-	  DstBlock		  "Product1"
-	  DstPort		  1
-	}
+	ZOrder			52
+	Points			[0, 100]
+	DstBlock		"Product1"
+	DstPort			1
       }
     }
     Line {
+      ZOrder		      33
       SrcBlock		      "Max amplitude"
       SrcPort		      1
       Points		      [55, 0]
@@ -2026,18 +2123,21 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      34
       SrcBlock		      "Add"
       SrcPort		      1
       DstBlock		      "P Gain"
       DstPort		      1
     }
     Line {
+      ZOrder		      35
       SrcBlock		      "Add1"
       SrcPort		      1
       DstBlock		      "MinMax"
       DstPort		      2
     }
     Line {
+      ZOrder		      36
       SrcBlock		      "P Gain"
       SrcPort		      1
       Points		      [5, 0]
@@ -2045,32 +2145,38 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      37
       SrcBlock		      "V_a_0"
       SrcPort		      1
       DstBlock		      "volt2Acceleration"
       DstPort		      2
     }
     Line {
+      ZOrder		      38
       SrcBlock		      "Sine Wave2"
       SrcPort		      1
-      Points		      [60, 0; 0, -25]
       DstBlock		      "Product1"
       DstPort		      2
     }
     Line {
+      ZOrder		      39
       SrcBlock		      "Product"
       SrcPort		      1
-      DstBlock		      "PCI-6259 DA"
-      DstPort		      1
+      Points		      [105, 0]
+      Branch {
+	ZOrder			60
+	Points			[0, -20]
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			54
+	DstBlock		"PCI-6259 DA"
+	DstPort			1
+      }
     }
     Line {
-      SrcBlock		      "Product1"
-      SrcPort		      1
-      Points		      [5, 0; 0, -45]
-      DstBlock		      "PCI-6259 DA"
-      DstPort		      2
-    }
-    Line {
+      ZOrder		      41
       SrcBlock		      "D Gain"
       SrcPort		      1
       Points		      [5, 0]
@@ -2078,12 +2184,14 @@ Model {
       DstPort		      3
     }
     Line {
+      ZOrder		      42
       SrcBlock		      "Add2"
       SrcPort		      1
       DstBlock		      "D Gain"
       DstPort		      1
     }
     Line {
+      ZOrder		      43
       SrcBlock		      "Unit Delay"
       SrcPort		      1
       Points		      [-5, 0]
@@ -2091,23 +2199,54 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      44
       SrcBlock		      "Constant Amplitude"
       SrcPort		      1
       Points		      [24, 0; 0, -25]
       DstBlock		      "Add1"
       DstPort		      2
     }
+    Line {
+      ZOrder		      59
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "commanded voltages"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      40
+      SrcBlock		      "Product1"
+      SrcPort		      1
+      Points		      [100, 0; 0, -85; 5, 0]
+      Branch {
+	ZOrder			61
+	Points			[0, 40]
+	DstBlock		"Mux2"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			57
+	DstBlock		"PCI-6259 DA"
+	DstPort			2
+      }
+    }
     Annotation {
       SID		      "82"
       Name		      "2nd-Order System Demonstration"
-      Position		      [274, 25]
+      Position		      [274, 25, 517, 46]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -1
       FontName		      "Arial"
       FontSize		      16
     }
     Annotation {
       SID		      "83"
       Name		      "(y'' + 2*d*wn*y' + wn^2*y = wn^2*u)"
-      Position		      [273, 47]
+      Position		      [273, 47, 524, 68]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -2
       FontName		      "Arial"
       FontSize		      16
     }
@@ -2115,17 +2254,26 @@ Model {
       SID		      "84"
       Name		      "This model was created in support of the xPC Target Application Note (xPCTAN-0100):\n\"xPC Target D"
       "ata Logging Methodologies\""
-      Position		      [468, 573]
+      Position		      [468, 573, 468, 573]
+      AutoSize		      on
+      WordWrap		      off
       DropShadow	      on
+      ZOrder		      -3
     }
     Annotation {
       SID		      "85"
       Name		      "v_a"
-      Position		      [136, 123]
+      Position		      [136, 123, 136, 123]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -4
     }
     Annotation {
       SID		      "86"
-      Position		      [809, 560]
+      Position		      [809, 560, 809, 560]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -5
     }
   }
 }
